@@ -64,7 +64,7 @@ def main():
 
         # Perform the calculation and display the result
         result = simple_calculator(operation, num1, num2)
-    print(f"The result of {operation}ing {num1} and {num2} is: {result}")
+    print(f"The result of {operation}ing {num1} and {num2} is: {result}") # type: ignore
 
 
 if __name__ == "__main__":
