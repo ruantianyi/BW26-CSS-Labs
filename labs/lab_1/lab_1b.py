@@ -40,7 +40,7 @@ def simple_calculator(operation: str, num1: float, num2: float) -> float:
             valid = True
             return num1 / num2
         else:
-            print("Cannot divide by zero. please retry.\n")
+            print("Cannot divide by zero. Please retry.\n")
     else:
         print("Invalid operation. Please choose from 'add', 'subtract', 'multiply', or 'divide'.\n")
 
