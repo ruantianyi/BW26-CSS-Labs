@@ -6,7 +6,6 @@ Given a list of numbers, return the maximum sum of any contiguous subarray of th
 Do not assume anything. Account for all edge cases.
 
 Derived from LeetCode problem: https://leetcode.com/problems/maximum-subarray/ (leetcode medium)
-(test line, please ignore)
 """
 
 # TODO: Find and resolve the bug in the following implementation. Create unit tests to verify your fix.
