@@ -24,25 +24,18 @@ def simple_calculator(operation: str, num1: float, num2: float) -> float:
     Returns:
         float: The result of the operation.
     """
-    global valid
+
 
     if operation == "add":
-        valid = True
         return num1 + num2
     elif operation == "subtract":
-        valid = True
         return num1 - num2
     elif operation == "multiply":
-        valid = True
         return num1 * num2
     elif operation == "divide":
-        if num2 != 0:
-            valid = True
-            return num1 / num2
-        else:
-            print("Cannot divide by zero. Please retry.\n")
+        return num1 / num2
     else:
-        print("Invalid operation. Please choose from 'add', 'subtract', 'multiply', or 'divide'.\n")
+        raise ValueError("Invalid operation. Please choose from 'add', 'subtract', 'multiply', or 'divide'")
 
 def main():
     global valid
@@ -52,18 +45,18 @@ def main():
     valid = False
 
     # Ask the user for sample input   
-    while not valid:
+    while True:
         try:
             num1 = float(input("Enter the first number: "))
             num2 = float(input("Enter the second number: "))
             operation = input("Enter the operation (add, subtract, multiply, divide): ").strip().lower()
+            result = simple_calculator(operation, num1, num2)
+        except (ZeroDivisionError, ValueError) as e:
+            print(f"Error: {e}. Please retry.\n")
+        else:
+            break
 
-        except:
-            print("Invalid Input. Please enter a number.\n")
-            continue
 
-        # Perform the calculation and display the result
-        result = simple_calculator(operation, num1, num2)
     print(f"The result of {operation}ing {num1} and {num2} is: {result}") # type: ignore
 
 
