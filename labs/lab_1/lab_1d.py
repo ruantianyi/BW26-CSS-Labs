@@ -23,7 +23,7 @@ def two_sum(nums: list[int], target: int) -> list[int]:
 
     num_to_index = {}
     for index, num in enumerate(nums):
-        complement = target + num
+        complement = target - num
         if complement in num_to_index:
             return [num_to_index[complement], index]
         num_to_index[num] = index
@@ -31,7 +31,7 @@ def two_sum(nums: list[int], target: int) -> list[int]:
 
 # Example usage:
 def main():
-    nums = [2, 7, 11, 15]
+    nums = [2, 8, 11, 15, 22203, 4323, 123, 456, 789, 9999, 1221, 212, 345, 678, 901, 234, 567, 890, 1234, 5678, -6, 3, 9, 4, 5, 6, 7, 8, 10]
     target = 9
     result = two_sum(nums, target)
     print(f"Indices of the two numbers that add up to {target}: {result}")
